@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
-	$('#filmButton').click(function() {
-	    filmPick(); 
+    $('#filmButton').click(function() {
+        filmPick();
     });
     $('#albumButton').click(function() {
-    	albumPick(); 
+        albumPick();
     });
     $('#bookButton').click(function() {
-    	bookPick(); 
+        bookPick();
     });
 
 });
@@ -21,7 +21,7 @@ function bookPick() {
 
 	var nextBook = "";
 
-	// Books with a score of 10 and greater from "The Top Ten" 
+	// Books with a score of 10 and greater from "The Top Ten"
 	var bestBooks = [
 	'Anna Karenina',
 	'Madame Bovary',
@@ -128,7 +128,7 @@ function bookPick() {
 	'The Power and the Glory',
 	'The stories of Alice Munro',
 	'A Dance to the Music of Time',
-	'The Prime of Miss Jean Brodie', 
+	'The Prime of Miss Jean Brodie',
 	'Stones for Ibarra',
 	'The Tin Drum',
 	'Romeo and Juliet',
@@ -210,7 +210,7 @@ function bookPick() {
 	function chooseBook(bucket) {
 
 			var ri = Math.floor(Math.random() * bucket.length);// Random Index position in the array
-			nextBook = bucket[ri]; // 
+			nextBook = bucket[ri]; //
 			bucket.splice(ri, 1); // Splice out 1 random element using the ri var
 			$("#book-recommendation").append("Your next book will be: <br><br>" + nextBook+"</br></br>");
 
@@ -224,7 +224,7 @@ function bookPick() {
 	//		r: "json",
 	//	};
 	//	$.getJSON(omdbAPI, omdbOptions, function(data) {
-	//		console.log(data);	
+	//		console.log(data);
 	//		console.log(data.imdbID);
 	//		console.log(data.Poster);
 	//		imdbID = data.imdbID;
@@ -235,8 +235,8 @@ function bookPick() {
 
 	//	});
 	}
-  
-  
+
+
 	chooseBook(unreadBestBooks);
 	getISBN(nextBook);
 }
@@ -333,7 +333,7 @@ function filmPick() {
 	'Notorious',
 	'On The Waterfront',
 	'One Flew Over The Cuckoo\'s Nest',
-	'Ordinary People', 
+	'Ordinary People',
 	'Patton',
 	'Platoon',
 	'Psycho',
@@ -345,9 +345,9 @@ function filmPick() {
 	'Rocky',
 	'Saving Private Ryan',
 	'Schindler\'s List',
-	'Shakespeare In Love', 
+	'Shakespeare In Love',
 	'Shane',
-	'Sideways', 
+	'Sideways',
 	'Singin\' In The Rain',
 	'Snow White And The Seven Dwarfs',
 	'Some Like It Hot',
@@ -360,7 +360,7 @@ function filmPick() {
 	'Sunset Boulevard',
 	'Swing Time',
 	'Taxi Driver',
-	'Terms Of Endearment', 
+	'Terms Of Endearment',
 	'The African Queen',
 	'The Apartment',
 	'The Best Years Of Our Lives',
@@ -437,7 +437,7 @@ function filmPick() {
 	function chooseFilm(bucket) {
 
 			var ri = Math.floor(Math.random() * bucket.length);// Random Index position in the array
-			nextFilm = bucket[ri]; // 
+			nextFilm = bucket[ri]; //
 			bucket.splice(ri, 1); // Splice out 1 random element using the ri var
 			$("#film-recommendation").append("Your next film will be: <br><br>" + nextFilm +"</br></br>");
 
@@ -452,7 +452,7 @@ function filmPick() {
 			r: "json",
 		};
 		$.getJSON(omdbAPI, omdbOptions, function(data) {
-			console.log(data);	
+			console.log(data);
 			console.log(data.imdbID);
 			console.log(data.Poster);
 			imdbID = data.imdbID;
@@ -478,7 +478,7 @@ function filmPick() {
 //		i: ID
 //	};
 //	$.getJSON(omdbImageAPI, omdbImageOptions, function(data) {
-//		console.log(data);	
+//		console.log(data);
 //
 //		$("#poster").append("<img src='" + data +"'</img>");
 //
@@ -617,7 +617,7 @@ function albumPick() {
 	function chooseAlbum(bucket) {
 
 			var ri = Math.floor(Math.random() * bucket.length);// Random Index position in the array
-			nextAlbum = bucket[ri]; // 
+			nextAlbum = bucket[ri]; //
 			bucket.splice(ri, 1); // Splice out 1 random element using the ri var
 			$("#album-recommendation").append("Your next album will be: <br><br>" + nextAlbum + "</br></br>");
 
@@ -631,7 +631,7 @@ function albumPick() {
 	//		r: "json",
 	//	};
 	//	$.getJSON(omdbAPI, omdbOptions, function(data) {
-	//		console.log(data);	
+	//		console.log(data);
 	//		console.log(data.imdbID);
 	//		console.log(data.Poster);
 	//		imdbID = data.imdbID;
@@ -642,8 +642,8 @@ function albumPick() {
 
 	//	});
 	}
-  
-  
+
+
 	chooseAlbum(unheardBestAlbums);
 	getUPC(nextAlbum);
 }
